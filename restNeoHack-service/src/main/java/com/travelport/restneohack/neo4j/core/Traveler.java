@@ -37,6 +37,9 @@ public class Traveler extends AbstractEntity {
 	@RelatedTo(type = "ADDRESS")//require direction type here to address
 	private Set<Address> addresses = new HashSet<Address>();
 
+        public Traveler() {
+
+	}
 	public Traveler(String firstName, String lastName, String emailAddress) {
 
         Assert.hasText(firstName);
@@ -46,10 +49,6 @@ public class Traveler extends AbstractEntity {
 		this.firstName = firstName;
 		this.lastName = lastName;
         this.emailAddress = emailAddress;
-	}
-
-	protected Traveler() {
-
 	}
 
 	public void add(Address address) {

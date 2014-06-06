@@ -13,6 +13,8 @@ import com.travelport.restneohack.neo4j.core.Country;
 import com.travelport.restneohack.neo4j.core.EmailAddress;
 import com.travelport.restneohack.neo4j.core.Traveler;
 import com.travelport.restneohack.neo4j.core.TravelerRepository;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.notNullValue;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
@@ -21,7 +23,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import static org.hamcrest.Matchers.is;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -31,48 +32,40 @@ import org.springframework.transaction.annotation.Transactional;
  *
  * @author sheimmer
  */
-@ContextConfiguration(locations = "classpath:/META_INF.spring/ApplicationContext.xml")
-@RunWith(SpringJUnit4ClassRunner.class)
-@Transactional
-public class TravelerDaoSpringDataImplTest extends AbstractIntegrationTest {
+
+public class TravelerDaoSpringDataImplTest extends AbstractIntegrationTest{
     
-    @Autowired
-    TravelerDaoSpringDataImpl travelerDao;
-    
-    public TravelerDaoSpringDataImplTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
+        @Autowired
+	TravelerRepository repository;
+        
+        @Autowired
+        TravelerDaoSpringDataImpl dataImpl;
     
     @Test
     public void savesTravelerCorrectly(){
-        TravelerDaoSpringDataImpl impl = new TravelerDaoSpringDataImpl();
+   //     TravelerDaoSpringDataImpl impl = new TravelerDaoSpringDataImpl();
         EmailAddress email = new EmailAddress("HanSolo@travelport.com");
         Traveler hanSolo = new Traveler("Han", "Solo", email.getEmail());
         
         Country usa=new Country("US","United States");
         hanSolo.add(new Address("27 Broadway", "New York", usa));
+        //Traveler result = repository.save(hanSolo);
+        Traveler result = dataImpl.createTraveler(hanSolo);
+        result.toString();
         
-        Traveler result = travelerDao.createTraveler(hanSolo);
         
-        Traveler hanny = impl.findByEmailAddress(email.getEmail());
+	assertThat(result.getId(), is(notNullValue()));
+        
+        
+        
+  //      Traveler hanny = impl.findByEmailAddress(email.getEmail());
+        Traveler result2 = repository.findByEmailAddress(email.getEmail());
+        System.out.println("Traveler email = " + hanSolo.getEmailAddress());
         System.out.println("Traveler = " + hanSolo.toString());
-        assertThat(result, is(hanSolo));
+ //       assertThat(result, is(hanSolo));
     }
+    
+
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:

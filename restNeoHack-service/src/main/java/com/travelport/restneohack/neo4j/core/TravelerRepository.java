@@ -18,7 +18,7 @@ package com.travelport.restneohack.neo4j.core;
 import org.springframework.data.neo4j.repository.GraphRepository;
 import org.springframework.data.neo4j.repository.NamedIndexRepository;
 
-public interface TravelerRepository extends GraphRepository<Traveler>, NamedIndexRepository<Traveler> {
+public interface TravelerRepository extends GraphRepository<Traveler>{
 
         @Override
 	Traveler findOne(Long id);

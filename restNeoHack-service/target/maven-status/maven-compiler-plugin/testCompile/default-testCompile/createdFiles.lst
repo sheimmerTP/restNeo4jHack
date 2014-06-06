@@ -1,11 +1,12 @@
 com/travelport/restneohack/neo4j/accountView/OrderMatchers.class
 com/oreilly/springdata/neo4j/PropertyPathValueMatcher.class
 com/travelport/restneohack/neo4j/TestApplicationConfig.class
-com/travelport/restneohack/neo4j/AbstractIntegrationTest.class
 com/travelport/restneohack/neo4j/ApplicationConfigTest.class
+com/travelport/restneohack/neo4j/dao/TravelerDaoSpringDataImplTest.class
 com/travelport/restneohack/neo4j/core/CoreMatchers.class
-com/travelport/restneohack/neo4j/PaymentTypeMatcher.class
+com/oreilly/springdata/neo4j/CollectionPathMatcher.class
 com/travelport/restneohack/neo4j/core/TravelerRepositoryIntegrationTest.class
 com/travelport/restneohack/neo4j/core/FormOfPaymentRepositoryIntegrationTest.class
+com/travelport/restneohack/neo4j/AbstractIntegrationTest.class
 com/travelport/restneohack/neo4j/accountView/OrderRepositoryIntegrationTest.class
-com/oreilly/springdata/neo4j/CollectionPathMatcher.class
+com/travelport/restneohack/neo4j/PaymentTypeMatcher.class

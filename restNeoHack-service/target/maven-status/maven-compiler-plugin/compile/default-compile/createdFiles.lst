@@ -6,8 +6,8 @@ com/travelport/restneohack/neo4j/core/Traveler.class
 com/travelport/restneohack/neo4j/order/QAccountView.class
 com/travelport/restneohack/neo4j/order/PaymentType.class
 com/travelport/restneohack/neo4j/core/AbstractEntity.class
-com/travelport/restneohack/model/services/marker/Service.class
 com/travelport/restneohack/model/services/factory/ServiceFactory.class
+com/travelport/restneohack/model/services/marker/Service.class
 com/travelport/restneohack/neo4j/core/QAddress.class
 com/travelport/restneohack/neo4j/core/QTraveler.class
 com/travelport/restneohack/model/dao/GraphUtil$1.class
@@ -28,7 +28,7 @@ com/travelport/restneohack/neo4j/core/QCategory.class
 com/travelport/restneohack/neo4j/core/QFormOfPayment.class
 com/travelport/restneohack/model/dao/travelerNeo4j/TravelerDaoSpringDataImpl.class
 com/travelport/restneohack/neo4j/core/Category.class
-com/travelport/restneohack/model/dao/GraphUtil.class
 com/travelport/restneohack/model/business/NeoCRUDopsMgr.class
+com/travelport/restneohack/model/dao/GraphUtil.class
 com/travelport/restneohack/model/dao/Neo4jDao.class
 com/travelport/restneohack/neo4j/core/TravelerRepository.class
