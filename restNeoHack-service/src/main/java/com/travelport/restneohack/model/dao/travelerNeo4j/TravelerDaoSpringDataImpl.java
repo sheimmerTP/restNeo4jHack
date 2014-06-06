@@ -33,8 +33,9 @@ import org.springframework.data.neo4j.conversion.EndResult;
  *
  * @author sheimmer
  */
-//@EnableNeo4jRepositories
-public abstract class TravelerDaoSpringDataImpl implements TravelerRepository {
+@Configuration
+@EnableNeo4jRepositories
+public class TravelerDaoSpringDataImpl {
     
     @Bean
     EmbeddedGraphDatabase graphDatabaseService(){
@@ -84,17 +85,14 @@ public abstract class TravelerDaoSpringDataImpl implements TravelerRepository {
 
     }
     
-    @Override
     public Traveler findOne(Long id){
         return travelerRepository.findOne(id);
     }
     
-    @Override
     public Traveler findByEmailAddress(String emailAddress){
         return travelerRepository.findByEmailAddress(emailAddress);
     }
     
-    @Override
     public <T extends Traveler> T save(T traveler) {
         return travelerRepository.save(traveler);
     }

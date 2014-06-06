@@ -20,8 +20,10 @@ import org.springframework.data.neo4j.repository.NamedIndexRepository;
 
 public interface TravelerRepository extends GraphRepository<Traveler>, NamedIndexRepository<Traveler> {
 
+        @Override
 	Traveler findOne(Long id);
 
+        @Override
 	<T extends Traveler> T save(T traveler);
 
 	Traveler findByEmailAddress(String emailAddress);
